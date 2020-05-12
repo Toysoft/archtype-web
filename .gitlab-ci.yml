@@ -8,8 +8,6 @@ stages:
 
 npm_install:
   stage: npm
-  tags:
-    - dev
   image: centos/nodejs-10-centos7:10
   before_script: []
   script:
@@ -21,8 +19,6 @@ npm_install:
 
 test_lint:
   stage: analysis
-  tags:
-    - dev
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
@@ -35,8 +31,6 @@ test_lint:
 
 test_unit:
   stage: analysis
-  tags:
-    - dev
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
@@ -52,8 +46,6 @@ build_app:
   only:
     refs:
       - develop
-  tags:
-    - dev
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
