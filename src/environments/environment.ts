@@ -3,8 +3,9 @@ export const environment = {
 };
 
 export const sistema = {
-  version: '1.0.0',
+  version: '0.0.1',
   nomeSistema: 'NOME_SISTEMA',
-  siglaSistema: 'SIGLA_SISTEMA',
+  siglaSistema: 'SIGLA',
+  api: 'http://localhost:4200/api',
   nomeMinisterio: 'MINISTERIO DA ECONOMIA',
 };

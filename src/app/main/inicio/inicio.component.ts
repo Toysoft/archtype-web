@@ -4,6 +4,7 @@ import { FuseTranslationLoaderService } from '@arch/services/translation-loader.
 
 import { locale as english } from './i18n/en';
 import { locale as turkish } from './i18n/tr';
+import { sistema } from 'environments/environment';
 
 @Component({
   selector: 'inicio',
@@ -11,6 +12,7 @@ import { locale as turkish } from './i18n/tr';
   styleUrls: ['./inicio.component.scss'],
 })
 export class InicioComponent {
+  public nomeSistema: string = sistema.nomeSistema;
   /**
    * Constructor
    *

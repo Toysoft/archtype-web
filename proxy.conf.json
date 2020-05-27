@@ -1,15 +1,6 @@
 {
-  "/wso2/*": {
-    "target": "http://api.okd.infraestrutura.gov.br/",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/wso2/*": ""
-    }
-  },
   "/api/*": {
-    "target": "http://localhost:4000",
+    "target": "http://localhost:8080",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,

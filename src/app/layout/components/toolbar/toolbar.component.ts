@@ -8,7 +8,7 @@ import { FuseConfigService } from '@arch/services/config.service';
 import { FuseSidebarService } from '@arch/components/sidebar/sidebar.service';
 
 import { navigation } from 'app/navigation/navigation';
-
+import { sistema } from 'environments/environment';
 @Component({
   selector: 'toolbar',
   templateUrl: './toolbar.component.html',
@@ -22,7 +22,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   languages: any;
   navigation: any;
   selectedLanguage: any;
-  userStatusOptions: any[];
+  public nomeSistema: string = sistema.nomeSistema;
 
   // Private
   private _unsubscribeAll: Subject<any>;
@@ -40,46 +40,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     private _translateService: TranslateService
   ) {
     // Set the defaults
-    this.userStatusOptions = [
-      {
-        title: 'Online',
-        icon: 'icon-checkbox-marked-circle',
-        color: '#4CAF50',
-      },
-      {
-        title: 'Away',
-        icon: 'icon-clock',
-        color: '#FFC107',
-      },
-      {
-        title: 'Do not Disturb',
-        icon: 'icon-minus-circle',
-        color: '#F44336',
-      },
-      {
-        title: 'Invisible',
-        icon: 'icon-checkbox-blank-circle-outline',
-        color: '#BDBDBD',
-      },
-      {
-        title: 'Offline',
-        icon: 'icon-checkbox-blank-circle-outline',
-        color: '#616161',
-      },
-    ];
-
-    this.languages = [
-      {
-        id: 'en',
-        title: 'English',
-        flag: 'us',
-      },
-      {
-        id: 'tr',
-        title: 'Turkish',
-        flag: 'tr',
-      },
-    ];
 
     this.navigation = navigation;
 

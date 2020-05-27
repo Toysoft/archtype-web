@@ -27,6 +27,10 @@ No seu navegador apenas acesse a url `http://localhost:4200`.
 
 Dentro de `src/app/navigation/navigation.ts` será adicionado os menu que aplicação irá precisar. Por default já tem um exemplo, que é a rota de `/inicio`.
 
+## Parametrização do sistema
+
+No arquivo `src/environments/environment.ts` deve ser informado os dados do sistema, como nome, ministerio, e entre outros.
+
 ## Comandos NG Cli
 
 Para criar um componente:

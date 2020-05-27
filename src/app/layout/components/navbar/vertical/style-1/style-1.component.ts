@@ -13,6 +13,7 @@ import { FuseConfigService } from '@arch/services/config.service';
 import { FuseNavigationService } from '@arch/components/navigation/navigation.service';
 import { FusePerfectScrollbarDirective } from '@arch/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import { FuseSidebarService } from '@arch/components/sidebar/sidebar.service';
+import { sistema } from 'environments/environment';
 
 @Component({
   selector: 'navbar-vertical-style-1',
@@ -23,6 +24,7 @@ import { FuseSidebarService } from '@arch/components/sidebar/sidebar.service';
 export class NavbarVerticalStyle1Component implements OnInit, OnDestroy {
   fuseConfig: any;
   navigation: any;
+  public siglaSistema: string = sistema.siglaSistema;
 
   // Private
   private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
