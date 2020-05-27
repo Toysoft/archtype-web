@@ -23,6 +23,10 @@ npm start
 
 No seu navegador apenas acesse a url `http://localhost:4200`.
 
+## Adicionar os atalhos no sidebar (menu)
+
+Dentro de `src/app/navigation/navigation.ts` será adicionado os menu que aplicação irá precisar. Por default já tem um exemplo, que é a rota de `/inicio`.
+
 ## Comandos NG Cli
 
 Para criar um componente:
