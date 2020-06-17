@@ -3,8 +3,6 @@ image: ebits/openshift-client:v3.11.0
 stages:
   - npm
   - analysis
-  - test
-  - build
 
 npm_install:
   stage: npm
@@ -23,7 +21,7 @@ test_lint:
   stage: analysis
   tags:
     - ME
-  image: saady/jenkins-slave-nodejs10-centos7:v3.11
+  image: saady/nodejs-10-centos7:10
   before_script: []
   cache:
     key: modules
@@ -37,7 +35,7 @@ test_unit:
   stage: analysis
   tags:
     - ME
-  image: saady/jenkins-slave-nodejs10-centos7:v3.11
+  image: saady/nodejs-10-centos7:10
   before_script: []
   cache:
     key: modules
@@ -46,23 +44,3 @@ test_unit:
     policy: pull
   script:
     - 'npm run lint'
-
-build_app:
-  stage: build
-  only:
-    refs:
-      - develop
-  tags:
-    - ME
-  image: saady/jenkins-slave-nodejs10-centos7:v3.11
-  before_script: []
-  cache:
-    key: modules
-    paths:
-      - node_modules/
-    policy: pull
-  script:
-    - 'npm run build-prod'
-  artifacts:
-    paths:
-      - dist/
