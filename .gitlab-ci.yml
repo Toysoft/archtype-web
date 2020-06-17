@@ -21,7 +21,7 @@ test_lint:
   stage: analysis
   tags:
     - ME
-  image: saady/nodejs-10-centos7:10
+  image: centos/nodejs-10-centos7:10
   before_script: []
   cache:
     key: modules
@@ -35,7 +35,7 @@ test_unit:
   stage: analysis
   tags:
     - ME
-  image: saady/nodejs-10-centos7:10
+  image: centos/nodejs-10-centos7:10
   before_script: []
   cache:
     key: modules
