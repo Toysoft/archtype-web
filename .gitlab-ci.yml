@@ -51,14 +51,17 @@ analysis_sonar:
   stage: sonarqube
   tags:
     - ME
-  image: newtmitch/sonar-scanner
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: http://sonar.fabrica.lifecon.com.br
+    SONAR_ANALYSIS_MODE: publish
   cache:
     key: modules
     paths:
       - node_modules/
     policy: pull
   script:
-    - sonar-scanner -Dsonar.projectKey=archtype-web -Dsonar.sources=. -Dsonar.host.url=http://sonar.fabrica.lifecon.com.br -Dsonar.login=d0df9e32ff56ae69e774ecd98285816f5bb13d8f
+    - gitlab-sonar-scanner -Dsonar.projectKey=archtype-web -Dsonar.sources=. -Dsonar.host.url=http://sonar.fabrica.lifecon.com.br -Dsonar.login=d0df9e32ff56ae69e774ecd98285816f5bb13d8f
 
 build_app:
   stage: build
