@@ -52,12 +52,12 @@ analysis_sonar:
   tags:
     - ME
   image: newtmitch/sonar-scanner
-  script:
-    - "sonar-scanner \
+  before_script:
+    - sonar-scanner \
       -Dsonar.projectKey=archtype-web \
       -Dsonar.sources=. \
       -Dsonar.host.url=http://sonar.fabrica.lifecon.com.br \
-      -Dsonar.login=d0df9e32ff56ae69e774ecd98285816f5bb13d8f"
+      -Dsonar.login=d0df9e32ff56ae69e774ecd98285816f5bb13d8f
   cache:
     key: modules
     paths:
