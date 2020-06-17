@@ -1,0 +1,68 @@
+image: ebits/openshift-client:v3.11.0
+
+stages:
+  - npm
+  - analysis
+  - test
+  - build
+
+npm_install:
+  stage: npm
+  tags:
+    - ME
+  image: centos/nodejs-10-centos7:10
+  before_script: []
+  script:
+    - 'npm install --verbose'
+  cache:
+    key: modules
+    paths:
+      - node_modules/
+
+test_lint:
+  stage: analysis
+  tags:
+    - ME
+  image: saady/jenkins-slave-nodejs10-centos7:v3.11
+  before_script: []
+  cache:
+    key: modules
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - 'npm run lint'
+
+test_unit:
+  stage: analysis
+  tags:
+    - ME
+  image: saady/jenkins-slave-nodejs10-centos7:v3.11
+  before_script: []
+  cache:
+    key: modules
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - 'npm run lint'
+
+build_app:
+  stage: build
+  only:
+    refs:
+      - develop
+  tags:
+    - ME
+  image: saady/jenkins-slave-nodejs10-centos7:v3.11
+  before_script: []
+  cache:
+    key: modules
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - 'npm run build-prod'
+  artifacts:
+    paths:
+      - dist/
