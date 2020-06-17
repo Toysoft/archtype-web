@@ -3,6 +3,7 @@ image: ebits/openshift-client:v3.11.0
 stages:
   - npm
   - analysis
+  - build
 
 npm_install:
   stage: npm
@@ -44,3 +45,23 @@ test_unit:
     policy: pull
   script:
     - 'npm run lint'
+
+build_app:
+  stage: build
+  only:
+    refs:
+      - ME
+  tags:
+    - dev
+  image: centos/nodejs-10-centos7:10
+  before_script: []
+  cache:
+    key: modules
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - 'npm run build-prod'
+  artifacts:
+    paths:
+      - dist/
