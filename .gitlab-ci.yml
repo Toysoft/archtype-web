@@ -2,8 +2,8 @@ image: ebits/openshift-client:v3.11.0
 
 stages:
   - npm
-  - analysis
   - sonarqube
+  - analysis
   - build
 
 npm_install:
