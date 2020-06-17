@@ -11,6 +11,7 @@ import { takeUntil } from 'rxjs/operators';
 import { FuseMatchMediaService } from '@arch/services/match-media.service';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '.inner-scroll',
 })
 export class FuseInnerScrollDirective implements OnInit, OnDestroy {

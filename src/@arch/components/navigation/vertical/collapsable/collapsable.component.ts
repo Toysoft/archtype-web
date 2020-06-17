@@ -215,6 +215,7 @@ export class FuseNavVerticalCollapsableComponent implements OnInit, OnDestroy {
       return false;
     }
 
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < parent.children.length; i++) {
       if (parent.children[i].children) {
         if (this.isUrlInChildren(parent.children[i], url)) {

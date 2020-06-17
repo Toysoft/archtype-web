@@ -23,10 +23,12 @@ export class FuseHighlightComponent implements OnInit, OnDestroy {
   source: ElementRef;
 
   // Lang
+  // tslint:disable-next-line:no-input-rename
   @Input('lang')
   lang: string;
 
   // Path
+  // tslint:disable-next-line:no-input-rename
   @Input('path')
   path: string;
 

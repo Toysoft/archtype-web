@@ -19,6 +19,7 @@ export class FuseSearchBarComponent implements OnInit, OnDestroy {
   collapsed: boolean;
   fuseConfig: any;
 
+  // tslint:disable-next-line:no-output-native
   @Output()
   input: EventEmitter<any>;
 

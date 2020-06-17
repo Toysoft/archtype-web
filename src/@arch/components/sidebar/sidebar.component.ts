@@ -151,6 +151,7 @@ export class FuseSidebarComponent implements OnInit, OnDestroy {
 
     // Programmatically add/remove padding to the element
     // that comes after or before based on the position
+    // tslint:disable-next-line:one-variable-per-declaration
     let sibling, styleRule;
 
     const styleValue = this.foldedWidth + 'px';
@@ -415,6 +416,7 @@ export class FuseSidebarComponent implements OnInit, OnDestroy {
 
     // Programmatically add/remove padding to the element
     // that comes after or before based on the position
+    // tslint:disable-next-line:one-variable-per-declaration
     let sibling, styleRule;
 
     const styleValue = this.foldedWidth + 'px';
