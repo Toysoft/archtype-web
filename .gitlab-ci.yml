@@ -48,11 +48,8 @@ test_unit:
 
 build_app:
   stage: build
-  only:
-    refs:
-      - ME
   tags:
-    - dev
+    - ME
   image: centos/nodejs-10-centos7:10
   before_script: []
   cache:
