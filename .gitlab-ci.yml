@@ -52,9 +52,8 @@ analysis_sonar:
   tags:
     - ME
   image: newtmitch/sonar-scanner
-  before_script: []
   script:
-    - "sonar-scanner -Dsonar.host.url=http://sonar.fabrica.lifecon.com.br -Dsonar.projectKey=archtype-web -Dsonar.sources='src/app' -Dsonar.projectName=archtype-web -Dsonar.login=d0df9e32ff56ae69e774ecd98285816f5bb13d8f"
+    - "sonar-scanner -Dsonar.host.url='http://sonar.fabrica.lifecon.com.br' -Dsonar.projectKey=archtype-web -Dsonar.sources='src/app' -Dsonar.projectName='archtype-web' -Dsonar.login='d0df9e32ff56ae69e774ecd98285816f5bb13d8f'"
   cache:
     key: modules
     paths:
