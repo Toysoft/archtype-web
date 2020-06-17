@@ -9,7 +9,7 @@ stages:
 npm_install:
   stage: npm
   tags:
-    - almoxarifado
+    - ME
   image: centos/nodejs-10-centos7:10
   before_script: []
   script:
@@ -22,7 +22,7 @@ npm_install:
 test_lint:
   stage: analysis
   tags:
-    - almoxarifado
+    - ME
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
@@ -36,7 +36,7 @@ test_lint:
 test_unit:
   stage: analysis
   tags:
-    - almoxarifado
+    - ME
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
@@ -53,7 +53,7 @@ build_app:
     refs:
       - develop
   tags:
-    - almoxarifado
+    - ME
   image: saady/jenkins-slave-nodejs10-centos7:v3.11
   before_script: []
   cache:
