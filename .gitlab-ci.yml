@@ -2,9 +2,10 @@ image: ebits/openshift-client:v3.11.0
 
 stages:
   - npm
-  - sonarqube
   - analysis
+  - sonarqube
   - build
+  - deploy
 
 npm_install:
   stage: npm
@@ -79,3 +80,12 @@ build_app:
   artifacts:
     paths:
       - dist/
+
+deploy_front:
+  stage: deploy
+  tags:
+    - ME
+  image: centos/nodejs-10-centos7:10
+  before_script: []
+  script:
+    - 'ls -lsa'
